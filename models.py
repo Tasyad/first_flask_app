@@ -17,6 +17,8 @@ class BaseModel(Model):
 class Post(BaseModel):
     title = CharField(max_length=255, null=False)
     description = CharField(max_length=255, null=False)
+    name = CharField(max_length=255, null=False)
+    email = CharField(max_length=255, null=False)
     date = DateField(default=datetime.now)
 
     def __repr__(self):

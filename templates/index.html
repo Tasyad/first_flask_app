@@ -8,9 +8,15 @@
 </head>
 <body>
     {% for post in posts %}
+    <div style="background-color: blueviolet;
+    border-color: black; width: 20%">
     <h1>{{post.title}}</h1>
     <p>{{post.date}}</p>
+    <p>{{post.name}}</p>
+    <p>{{post.email}}</p>
     <p>{{post.description}}</p>
+    </div>
     {% endfor %}
+    <p><a href="/create/">Create New Post</a></p>
 </body>
 </html>

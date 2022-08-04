@@ -10,15 +10,20 @@ def mike():
     all_posts = Post.select()
     return render_template("index.html", posts=all_posts)
 
-@app.route('/create', methods = ('GET', 'POST'))
+@app.route('/create/', methods = ('GET', 'POST'))
 def create():
     if request.method == 'POST':
         title = request.form['title']
         description = request.form['title']
+        name = request.form['name']
+        email = request.form['email']
 
         Post.create(
             title = title,
-            description = description
+            description = description,
+            name = name,
+            email = email
+
         )
         return redirect('/')
     return render_template('create.html')
